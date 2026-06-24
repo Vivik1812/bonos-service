@@ -14,7 +14,6 @@ import os
 import time
 from contextlib import asynccontextmanager
 
-import psutil
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
