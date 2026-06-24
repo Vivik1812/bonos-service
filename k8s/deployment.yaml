@@ -1,0 +1,12 @@
+livenessProbe:
+  httpGet:
+    path: /live
+    port: 8004
+  initialDelaySeconds: 5
+  periodSeconds: 10
+readinessProbe:
+  httpGet: 
+    path: /ready
+    port: 8004
+  initialDelaySeconds: 3
+  periodSeconds: 5
