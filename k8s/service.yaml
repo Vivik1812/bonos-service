@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: estadisticas-service
+  name: bonos-service
   labels:
-    app: estadisticas-service
+    app: bonos-service
 spec:
   type: ClusterIP
   selector:
-    app: estadisticas-service
+    app: bonos-service
   ports:
     - name: http
       protocol: TCP
