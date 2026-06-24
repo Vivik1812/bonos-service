@@ -28,7 +28,7 @@ jobs:
               id: ecr
               uses: aws-actions/amazon-ecr-login@v2
 
-            - name: 4. Construir y subir las 3 imagenes
+            - name: 4. Construir y subir la imagen
               env:
                 REGISTRY: ${{ steps.ecr.outputs.registry }}
                 IMAGE_TAG: ${{ github.sha }}
@@ -44,7 +44,7 @@ jobs:
                 sudo mv kubectl /usr/local/bin/kubectl
         
             - name: 6. Conectar kubectl al cluster
-              run: aws eks update-kubeconfig --name "$CLUSTER_NAME" --region "AWS_REGION"
+              run: aws eks update-kubeconfig --name "$CLUSTER_NAME" --region "$AWS_REGION"
 
             - name: 7. Desplegar el Deployment y el Service
               env: 
